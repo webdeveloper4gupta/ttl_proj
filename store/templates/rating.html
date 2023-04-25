@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Document</title>
+</head>
+<body>
+          {% comment %} here i implement the rating concept {% endcomment %}
+          Here i make the review section page
+          <h1>Welcome to the review section</h1>
+         	
+           <h4>Write a review </h4>
+          <form method='POST'>
+          {% csrf_token %}
+          <label for="">Enter a review:</label>
+          <textarea  name="textarea" rows="4" cols="50"> </textarea><br>
+          <label for="">Out of 5 hoq much you will give.</label>
+          <input type="text" name='rat'>
+          <br>
+          <br>
+          <input type="submit" value="submit">
+
+          </form>
+         
+     
+           {% comment %} here i print the data {% endcomment %}
+           Reviews and Ratings
+           {% if data %}
+             {% for d in data %}
+             <hr>
+             <h5>{{d.name}}</h5>
+             <h5>{{d.rating}}</h5>
+             <hr>
+             {% endfor %}
+           {% else %}
+           {% endif %}
+</body>
+</html>
