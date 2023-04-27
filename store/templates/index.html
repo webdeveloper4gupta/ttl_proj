@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
 {% load cart %}
 {% load custom_filter %}
 <!-- body -->
@@ -54,7 +53,11 @@
 						</div>
 						{% else %}
 						<button><a href="{% url 'rating' product.id %}">Review</a></button>
-						<span class='float-right'><i class="fa-regular fa-star fa-lg text-warning"></i>0/5</span>
+						<span class='float-right'><i class="fa-regular fa-star fa-lg text-warning"></i>{% if product.avgrat %}
+						{{product.avgrat}}
+						{% else %}
+						0/5
+						{% endif %}</span>
 						<form action="/#{{product.id}}" method="POST" class="btn-block">
 							{% csrf_token %}
 							<input hidden type="text" name='product' value='{{product.id}}'>

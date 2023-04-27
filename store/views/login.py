@@ -2,7 +2,7 @@ from django.shortcuts import render , redirect , HttpResponseRedirect
 from django.contrib.auth.hashers import  check_password
 from store.models.customer import Customer
 from django.views import View
-
+from django.contrib.auth import authenticate, login, logout 
 
 class Login(View):
     return_url = None
@@ -20,6 +20,9 @@ class Login(View):
             flag = check_password (password, customer.password)
             if flag:
                 request.session['customer'] = customer.id
+           
+              
+            
 
                 if Login.return_url:
                     return HttpResponseRedirect (Login.return_url)
