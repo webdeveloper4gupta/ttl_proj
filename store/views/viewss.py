@@ -39,7 +39,7 @@ def rating(request,pk):
                               print(averages)
                               # now here i have to save the rating in the product database 
                               p1=Products.objects.get(id=pk)
-                              p1.avgrat=averages 
+                              p1.avgrat=round(averages, 2)
                               p1.save()
                   print(d1)                        
                   return render(request,"rating.html",{'data':data,'d1':d1})

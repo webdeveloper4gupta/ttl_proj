@@ -1,7 +1,10 @@
 # here i write the view for the update 
 from django.shortcuts import render , redirect , HttpResponseRedirect 
 from store.models.ratings import Ratings
+from  django.contrib.auth.decorators import login_required
 
+
+@login_required(login_url="login")
 def upd(request,pk2):
           print(pk2)
           if request.method=='POST':

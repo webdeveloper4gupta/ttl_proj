@@ -21,17 +21,20 @@
             </thead>
             <tbody>
                 
-                {% for product in products %}
-                <tr>
+                {% if products %}
+                 <tr>
                     <td>{{forloop.counter}}</td>
-                    <td><img style="height: 80px;" class="rounded-circle" src="{{product.image.url}}" alt=""></td>
-                    <td>{{product.name}}</td>
-                    <td>{{product.price|currency}}</td>
-                    <td>{{product|cart_quantity:request.session.cart}}</td>
-                    <td>{{product|price_total:request.session.cart|currency}}</td>
+                    <td><img style="height: 80px;" class="rounded-circle" src="{{products.image.url}}" alt=""></td>
+                    <td>{{products.name}}</td>
+                    <td>{{products.price|currency}}</td>
+                    <td>{{products|cart_quantity:request.session.cart}}</td>
+                    <td>{{products|price_total:request.session.cart|currency}}</td>
                 </tr>
+                {% else %}
+                {% endif %}
+               
 
-                {% endfor %}
+                {% comment %} {% endfor %} {% endcomment %}
                
             </tbody>
 
@@ -39,7 +42,7 @@
                 <tr>
                     <th colspan="4"></th>
                     <th class="" colspan="">Total</th>
-                    <th>{{products|total_cart_price:request.session.cart|currency}}</th>
+                    {% comment %} <th>{{products|total_cart_price:request.session.cart|currency}}</th> {% endcomment %}
                 </tr>
             </tfoot>
         </table>

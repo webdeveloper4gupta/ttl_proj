@@ -6,6 +6,12 @@ from store.models.product import Products
 from store.models.orders import Order
 from store.middlewares.auth import auth_middleware
 from store.models.ratings import Ratings
+
+
+from  django.contrib.auth.decorators import login_required
+
+
+@login_required(login_url="login")
 def dels(request,pk1):
           g1=Ratings.objects.get(id=pk1)
           g1.delete()

@@ -21,20 +21,20 @@
          
      
            {% comment %} here i print the data {% endcomment %}
-           Reviews and Ratings
+            <h2><b> <center>  Reviews  and Ratings </center> </b></h2>
            {% if data %}
              {% for d in data %}
              <hr>
-             <h5>{{d.name}}</h5>
-             <h5>{{d.rating}}</h5>
+             <h5>Customername: {{d.custname}}</h5>
+             <h5>Review: {{d.name}}</h5>
+             <h5>Rating: {{d.rating}}</h5>
              {% comment %} <h5>{{d1}}</h5> {% endcomment %}
-             <h5>{{d.custname}}</h5>
              {% comment %} here i make the concept of delete the rating. {% endcomment %}
               {% comment %} now here i have to logic the delete between is show only when the same userthat is login write the review {% endcomment %}
               {% if d.custid is d1 %}
               
-             <button><a href="{% url 'mahajan' d.id %}">Delete</a></button>
-             <button><a href="{% url 'update' d.id %}">Update review</a></button>
+             <button><a href="{% url 'mahajan' d.id %}" style="text-decoration:none; color:black;">Delete</a></button>
+             <button><a href="{% url 'update' d.id %}"  style="text-decoration:none; color:black;">Update review</a></button>
               {% else %}
               {% endif %}
 
