@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+         <h4>Update the review </h4>
+          <form method='POST'>
+          {% csrf_token %}
+          <label for="">Enter a review:</label>
+          <textarea  name="textarea" rows="4" cols="50"> </textarea><br>
+          <label for="">Out of 5 hoq much you will give.</label>
+          <input type="text" name='rat'>
+          <br>
+          <br>
+          <input type="submit" value="submit">
+
+          </form>  
+          {% include "footer.html" %}
+{% endblock %}

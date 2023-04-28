@@ -1,0 +1,55 @@
+<hr>
+<footer>
+         <div class="container">
+         <div class="row">
+        
+         <div class="col-4">
+          
+           <ul>
+            {% if user.is_authenticated %}
+            <li> <a href="">Orders</a> </li>
+          
+          <li> <a href="">Logout</a></li>
+       
+            {% else %}
+            <li><a href="">Signup</a> </li>
+          <li> <a href="">Login</a></li>
+        
+            {% endif %}
+          </ul>
+           
+      
+         
+         
+         </div>
+         <div class="col-4">
+         <ul>
+         <li><a href="">Women-clothing</a></li>
+         <li><a href="">Mens-clothing</a></li>
+         <li><a href="">Kids-clothing </a></li>
+         <li><a href="">Watches</a></li>
+         
+         
+         </ul>
+         
+         </div>
+         <div class="col-4">
+         <ul>
+         <li><a href="">Twiter</a></li>
+         <li><a href="">Linkedin</a></li>
+         <li><a href="">Instagram</a></li>
+         <li><a href="">Facebook</a></li>
+         
+         </ul>
+         
+         </div>
+          </div>
+         </div>
+        <center>
+        <b><h4>Copywrite&copy; by Sukritan gupta ,Founder of code World 2023</h4></b> 
+        </center> 
+</footer>
+
+</body>
+{% comment %} here i link the script files here {% endcomment %}
+</html>

@@ -13,7 +13,7 @@
             <hr>
             </div>
             <h3 class="alert alert-light rounded-pill" style="text-align:center" >Login</h3>
-            <form action="/login" method="POST">
+            {% comment %} <form action="/login" method="POST">
                 
                 {% csrf_token %}
 
@@ -50,9 +50,23 @@
 
 
                 
-            </form>
+            </form> {% endcomment %}
+
+
+                  <form  method="POST">
+          {% csrf_token %}
+          <label for="">Username</label>
+          <input type="text" name="name" placeholder="enter your username">
+          <br>
+          <label for="">passsword</label>
+          <input type="password" name="password" id="">
+          <br>
+          <input type="submit" value="login">
+
+          
+          </form>
         </div>
     </div>
 </div>
-
+{% include "footer.html" %}
 {% endblock %}

@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-          <meta charset="UTF-8">
-          <meta http-equiv="X-UA-Compatible" content="IE=edge">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Document</title>
-</head>
-<body>
+
+{% extends 'base.html' %}
+
+{% block content %}
           {% comment %} here i implement the rating concept {% endcomment %}
           Here i make the review section page
           <h1>Welcome to the review section</h1>
@@ -32,9 +27,23 @@
              <hr>
              <h5>{{d.name}}</h5>
              <h5>{{d.rating}}</h5>
+             {% comment %} <h5>{{d1}}</h5> {% endcomment %}
+             <h5>{{d.custname}}</h5>
+             {% comment %} here i make the concept of delete the rating. {% endcomment %}
+              {% comment %} now here i have to logic the delete between is show only when the same userthat is login write the review {% endcomment %}
+              {% if d.custid is d1 %}
+              
+             <button><a href="{% url 'mahajan' d.id %}">Delete</a></button>
+             <button><a href="{% url 'update' d.id %}">Update review</a></button>
+              {% else %}
+              {% endif %}
+
              <hr>
              {% endfor %}
            {% else %}
            {% endif %}
-</body>
-</html>
+{% comment %} </body>
+</html> {% endcomment %}
+{% include "footer.html" %}
+
+{%endblock%}

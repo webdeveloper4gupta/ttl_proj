@@ -1,0 +1,14 @@
+footer{
+          color:beige;
+          background-color: black;
+}
+footer a{
+          color:beige;
+          text-decoration: none;    
+}
+footer li{
+          list-style: none;
+}
+body{
+          background-color: bisque;
+}
