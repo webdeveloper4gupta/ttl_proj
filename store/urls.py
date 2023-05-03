@@ -11,7 +11,7 @@ from .views import viewss
 from .views.logout import  signout
 from .views.update import upd
 from .views.delete import dels
-
+from .views.aboutus import aboutus
 urlpatterns = [
     path('', Index.as_view(), name='homepage'),
     path('store', store , name='store'),
@@ -26,5 +26,6 @@ urlpatterns = [
     path('orders', OrderView, name='orders'),
     path('rating/<int:pk>',viewss.rating,name='rating'),
     path('mahajan/<int:pk1>',dels,name="mahajan"),
-    path('update/<int:pk2>',upd,name='update')
+    path('update/<int:pk2>',upd,name='update'),
+    path('views/',aboutus,name="aboutus")
 ]

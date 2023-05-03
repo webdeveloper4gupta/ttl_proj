@@ -52,7 +52,7 @@
 							</form>
 						</div>
 						{% else %}
-						<button><a href="{% url 'rating' product.id %}">Review</a></button>
+						<button type="button" class="btn btn-warning"><a href="{% url 'rating' product.id %}" style="text-decoration:None; color:white;">Review</a></button>
 						<span class='float-right'><i class="fa-regular fa-star fa-lg text-warning"></i>{% if product.avgrat %}
 						{{product.avgrat}}
 						{% else %}

@@ -3,19 +3,19 @@
 
 {% block content %}
           {% comment %} here i implement the rating concept {% endcomment %}
-          Here i make the review section page
+      
           <h1>Welcome to the review section</h1>
          	
-           <h4>Write a review </h4>
+          
           <form method='POST'>
           {% csrf_token %}
           <label for="">Enter a review:</label>
-          <textarea  name="textarea" rows="4" cols="50"> </textarea><br>
-          <label for="">Out of 5 hoq much you will give.</label>
-          <input type="text" name='rat'>
+          <textarea  name="textarea" rows="4" cols="50" required class="form-control"> </textarea><br>
+          <label for="">Out of 5 how much you will give.</label>
+          <input type="text" name='rat' required class="form-control">
           <br>
           <br>
-          <input type="submit" value="submit">
+          <input type="submit" value="submit"  class="btn btn-secondary">
 
           </form>
          
@@ -25,25 +25,31 @@
            {% if data %}
              {% for d in data %}
              <hr>
-             <h5>Customername: {{d.custname}}</h5>
+             <div class="card container mb-1 text-dark" >
+              <div class="card-body row" >
+                  <div class="col-12">
+             <h5>Customer name: {{d.custname}}</h5>
              <h5>Review: {{d.name}}</h5>
-             <h5>Rating: {{d.rating}}</h5>
+             <h5>Rating: {{d.rating}} <i class="fa-regular fa-star fa-lg text-warning"></i></h5>
              {% comment %} <h5>{{d1}}</h5> {% endcomment %}
              {% comment %} here i make the concept of delete the rating. {% endcomment %}
               {% comment %} now here i have to logic the delete between is show only when the same userthat is login write the review {% endcomment %}
               {% if d.custid is d1 %}
               
-             <button><a href="{% url 'mahajan' d.id %}" style="text-decoration:none; color:black;">Delete</a></button>
-             <button><a href="{% url 'update' d.id %}"  style="text-decoration:none; color:black;">Update review</a></button>
+             <button type="button" class="btn btn-secondary"><a href="{% url 'mahajan' d.id %}" style="text-decoration:none; color:black;">Delete</a></button>
+             <button type="button" class="btn btn-secondary"><a href="{% url 'update' d.id %}"  style="text-decoration:none; color:black;">Update review</a></button>
               {% else %}
               {% endif %}
 
              <hr>
+              </div>
+           </div>
+           </div>
              {% endfor %}
            {% else %}
            {% endif %}
-{% comment %} </body>
-</html> {% endcomment %}
+          
+
 {% include "footer.html" %}
 
 {%endblock%}

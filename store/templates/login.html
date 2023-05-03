@@ -55,14 +55,14 @@
 
                   <form  method="POST">
           {% csrf_token %}
-          <label for="">Username</label>
-          <input type="text" name="name" placeholder="enter your username">
+          <label for="" class="form-label">Username</label>
+          <input type="text" name="name" placeholder="enter your username" class="form-control">
           <br>
-          <label for="">passsword</label>
-          <input type="password" name="password" id="">
+          <label for="" class="form-label">passsword</label>
+          <input type="password" name="password" id="" class="form-control">
           <br>
-          <input type="submit" value="login">
-
+        <button type="button" > <input type="submit" value="login" class="btn btn-primary">
+</button>  
           
           </form>
         </div>

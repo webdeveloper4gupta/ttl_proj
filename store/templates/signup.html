@@ -29,7 +29,7 @@
                 {% endif %}
                 <!-- firstname -->
                 <div class="form-group">
-                    <label for="">First Name</label>
+                    <label for="" class="form-label">First Name</label>
                     <input type="text" name="firstname"
                      id="" value="{{values.first_name}}" class="form-control form-control-sm" 
                      placeholder="">
@@ -37,7 +37,7 @@
 
                 <!-- last name -->
                 <div class="form-group">
-                    <label for="">Last Name</label>
+                    <label for="" class="form-label">Last Name</label>
                     <input type="text" name="lastname" 
                     id="" value="{{values.last_name}}" class="form-control form-control-sm"
                     >
@@ -45,7 +45,7 @@
 
                 <!-- phone -->
                 <div class="form-group">
-                    <label for="">Phone</label>
+                    <label for="" class="form-label">Phone</label>
                     <input type="text" name="phone" 
                     id="" class="form-control form-control-sm"
                     value="{{values.phone}}"
@@ -54,7 +54,7 @@
                 </div>
                 <!-- email -->
                 <div class="form-group">
-                    <label for="">Email</label>
+                    <label for="" class="form-label">Email</label>
                     <input required type="email" name="email" id=""
                     value="{{values.email}}" 
                     class=" form-control-sm form-control" placeholder="abc@gmail.com">
@@ -63,7 +63,7 @@
 
                 <!-- password -->
                 <div class="form-group">
-                    <label for="">Password</label>
+                    <label for="" class="form-label">Password</label>
                     <input type="password" 
                     name="password" 
                     id=""
@@ -82,18 +82,18 @@
 
             <form  method="POST">
           {% csrf_token %}
-          <label for="">Enter user name</label>
-          <input type="text" placeholder="enter your name" name="name" required><br>
-          <label for="">enter password</label>
-          <input type="password" name="password" required><br>
-          <label for="">enter firstname</label>
-          <input type="text" placeholder="enter your first name" name="firstname" required><br>
-          <label for="">enter lastname</label>
-          <input type="text" placeholder="enter your last name" name="lastname" required><br>
-          <label for="">enter your email id</label>
-          <input type="email" placeholder="enter your email" name="email" required>
+          <label for="" class="form-label">Enter user name</label>
+          <input type="text" placeholder="enter your name" name="name" required class="form-control"><br>
+          <label for="" class="form-label">enter password</label>
+          <input type="password" name="password" required class="form-control"><br>
+          <label for="" class="form-label">enter firstname</label>
+          <input type="text" placeholder="enter your first name" name="firstname" required class="form-control"><br>
+          <label for="" class="form-label">enter lastname</label>
+          <input type="text" placeholder="enter your last name" name="lastname" required class="form-control"> <br>
+          <label for="" class="form-label">enter your email id</label>
+          <input type="email" placeholder="enter your email" name="email" required class="form-control">
           <br>
-          <input type="submit" value="Save">
+          <input type="submit" value="Save" class="btn btn-primary">
           </form>
           
 
